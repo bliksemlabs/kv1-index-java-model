@@ -1,6 +1,6 @@
-# netex-java-model
+# kv4-java-model
 
-Downloads the NeTEx-XML XSD files from https://github.com/rutebanken/NeTEx-XML and generates java model using jaxb.
+Downloads the BISON KV4 XSD files from https://github.com/BISONNL/KV4 and generates java model using jaxb.
 
 You need xmlstarlet installed.
 
