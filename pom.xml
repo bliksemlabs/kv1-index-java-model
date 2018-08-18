@@ -16,12 +16,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.connekt.bison</groupId>
-    <artifactId>kv4-java-model</artifactId>
+    <artifactId>kv6-java-model</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>kv4-java-model</name>
-    <description>Generates Java model from KV4 xsds using jaxb.</description>
-    <url>https://github.com/bliksemlabs/kv4-java-model</url>
+    <name>kv6-java-model</name>
+    <description>Generates Java model from KV6 xsds using jaxb.</description>
+    <url>https://github.com/bliksemlabs/kv6-java-model</url>
     <licenses>
         <license>
             <name>EUPL-1.2 with modifications</name>
@@ -40,10 +40,11 @@
     </developers>
 
     <properties>
-        <kv4RepoName>KV4</kv4RepoName>
-        <kv4Branch>master</kv4Branch>
-        <kv4GithubUrl>https://github.com/BISSONL/${kv4RepoName}</kv4GithubUrl>
-        <kv4Version>8.1.0.2</kv4Version>
+        <kv6RepoName>KV6</kv6RepoName>
+        <kv6Branch>master</kv6Branch>
+        <kv6GithubUrl>https://github.com/BISONNL/${kv6RepoName}</kv6GithubUrl>
+        <kv6Version>8.1.2.2</kv6Version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <assertj.core.version>3.4.1</assertj.core.version>
         <junit.version>4.12</junit.version>
         <jaxb.fluent.api.version>2.1.8</jaxb.fluent.api.version>
@@ -57,9 +58,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/bliksemlabs/kv4-java-model.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/bliksemlabs/kv4-java-model.git</developerConnection>
-        <url>https://github.com/bliksemlabs/kv4-java-model/tree/master</url>
+        <connection>scm:git:ssh://git@github.com/bliksemlabs/kv6-java-model.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/bliksemlabs/kv6-java-model.git</developerConnection>
+        <url>https://github.com/bliksemlabs/kv6-java-model/tree/master</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -142,12 +143,12 @@
                         </goals>
                         <configuration>
                             <environmentVariables>
-                                <BISON_REPO>${kv4RepoName}</BISON_REPO>
-                                <GIT_BRANCH>${kv4Branch}</GIT_BRANCH>
-                                <GITHUB_URL>${kv4GithubUrl}</GITHUB_URL>
-                                <DESTINATION_PATH>src/main/resources/xsd/${kv4Version}</DESTINATION_PATH>
+                                <BISON_REPO>${kv6RepoName}</BISON_REPO>
+                                <GIT_BRANCH>${kv6Version}</GIT_BRANCH>
+                                <GITHUB_URL>${kv6GithubUrl}</GITHUB_URL>
+                                <DESTINATION_PATH>src/main/resources/xsd/${kv6Version}</DESTINATION_PATH>
                             </environmentVariables>
-                            <executable>./bin/kv4-download-extract.sh</executable>
+                            <executable>./bin/download-extract.sh</executable>
                         </configuration>
                     </execution>
 					<!--
@@ -159,7 +160,7 @@
                         </goals>
                         <configuration>
                             <arguments>
-                                <argument>${kv4Version}</argument>
+                                <argument>${kv6Version}</argument>
                             </arguments>
                             <executable>
                                 ./bin/version_updater.sh
@@ -175,7 +176,7 @@
                         </goals>
                         <configuration>
                             <arguments>
-                                <argument>${kv4Version}</argument>
+                                <argument>${kv6Version}</argument>
                             </arguments>
                             <executable>./bin/annotation-replacer.sh</executable>
                         </configuration>
@@ -189,12 +190,12 @@
                 <configuration>
                     <extensions>
                         <extension>net.java.dev.jaxb2-commons:jaxb-fluent-api:${jaxb.fluent.api.version}</extension>
-                        <extension>org.apache.cxf.xjcplugins:cxf-xjc-ts:${cxf-xjc.version}</extension>
+						<extension>org.apache.cxf.xjcplugins:cxf-xjc-ts:${cxf-xjc.version}</extension>
                     </extensions>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-sources-for-kv4</id>
+                        <id>generate-sources-for-kv6</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>xsdtojava</goal>
@@ -203,7 +204,7 @@
                             <xsdOptions>
                                 <xsdOption>
                                     <xsd>
-                                        ${basedir}/src/main/resources/xsd/${kv4Version}/kv4-msg.xsd
+                                        ${basedir}/src/main/resources/xsd/${kv6Version}/kv6-msg.xsd
                                     </xsd>
                                     <extension>true</extension>
                                     <bindingFile>bindings.xjb</bindingFile>
