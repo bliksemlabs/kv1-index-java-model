@@ -16,12 +16,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.connekt.bison</groupId>
-    <artifactId>kv6-java-model</artifactId>
+    <artifactId>kv15-java-model</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>kv6-java-model</name>
-    <description>Generates Java model from KV6 xsds using jaxb.</description>
-    <url>https://github.com/bliksemlabs/kv6-java-model</url>
+    <name>kv15-java-model</name>
+    <description>Generates Java model from KV15 xsds using jaxb.</description>
+    <url>https://github.com/bliksemlabs/kv15-java-model</url>
     <licenses>
         <license>
             <name>EUPL-1.2 with modifications</name>
@@ -40,10 +40,10 @@
     </developers>
 
     <properties>
-        <kv6RepoName>KV6</kv6RepoName>
-        <kv6Branch>master</kv6Branch>
-        <kv6GithubUrl>https://github.com/BISONNL/${kv6RepoName}</kv6GithubUrl>
-        <kv6Version>8.1.2.2</kv6Version>
+        <kv15RepoName>KV15</kv15RepoName>
+        <kv15Branch>master</kv15Branch>
+        <kv15GithubUrl>https://github.com/BISONNL/${kv15RepoName}</kv15GithubUrl>
+        <kv15Version>8.1.3.0</kv15Version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <assertj.core.version>3.4.1</assertj.core.version>
         <junit.version>4.12</junit.version>
@@ -58,9 +58,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/bliksemlabs/kv6-java-model.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/bliksemlabs/kv6-java-model.git</developerConnection>
-        <url>https://github.com/bliksemlabs/kv6-java-model/tree/master</url>
+        <connection>scm:git:ssh://git@github.com/bliksemlabs/kv15-java-model.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/bliksemlabs/kv15-java-model.git</developerConnection>
+        <url>https://github.com/bliksemlabs/kv15-java-model/tree/master</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -143,10 +143,10 @@
                         </goals>
                         <configuration>
                             <environmentVariables>
-                                <BISON_REPO>${kv6RepoName}</BISON_REPO>
-                                <GIT_BRANCH>${kv6Version}</GIT_BRANCH>
-                                <GITHUB_URL>${kv6GithubUrl}</GITHUB_URL>
-                                <DESTINATION_PATH>src/main/resources/xsd/${kv6Version}</DESTINATION_PATH>
+                                <BISON_REPO>${kv15RepoName}</BISON_REPO>
+                                <GIT_BRANCH>${kv15Version}</GIT_BRANCH>
+                                <GITHUB_URL>${kv15GithubUrl}</GITHUB_URL>
+                                <DESTINATION_PATH>src/main/resources/xsd/${kv15Version}</DESTINATION_PATH>
                             </environmentVariables>
                             <executable>./bin/download-extract.sh</executable>
                         </configuration>
@@ -160,7 +160,7 @@
                         </goals>
                         <configuration>
                             <arguments>
-                                <argument>${kv6Version}</argument>
+                                <argument>${kv15Version}</argument>
                             </arguments>
                             <executable>
                                 ./bin/version_updater.sh
@@ -176,7 +176,7 @@
                         </goals>
                         <configuration>
                             <arguments>
-                                <argument>${kv6Version}</argument>
+                                <argument>${kv15Version}</argument>
                             </arguments>
                             <executable>./bin/annotation-replacer.sh</executable>
                         </configuration>
@@ -195,7 +195,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-sources-for-kv6</id>
+                        <id>generate-sources-for-kv15</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>xsdtojava</goal>
@@ -204,7 +204,7 @@
                             <xsdOptions>
                                 <xsdOption>
                                     <xsd>
-                                        ${basedir}/src/main/resources/xsd/${kv6Version}/kv6-msg.xsd
+                                        ${basedir}/src/main/resources/xsd/${kv15Version}/kv15-msg.xsd
                                     </xsd>
                                     <extension>true</extension>
                                     <bindingFile>bindings.xjb</bindingFile>
