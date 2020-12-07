@@ -43,10 +43,10 @@
         <kv1IndexRepoName>KV1-index</kv1IndexRepoName>
         <kv1IndexBranch>master</kv1IndexBranch>
         <kv1IndexGithubUrl>https://github.com/BISONNL/${kv1IndexRepoName}</kv1IndexGithubUrl>
-        <kv1IndexVersion>8.3.0.0</kv1IndexVersion>
+        <kv1IndexVersion>8.1.0.1</kv1IndexVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <assertj.core.version>3.4.1</assertj.core.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jaxb.fluent.api.version>2.1.8</jaxb.fluent.api.version>
         <cxf.xjc.plugin.version>3.0.5</cxf.xjc.plugin.version>
         <xjc.guava.plugin.version>0.3.1</xjc.guava.plugin.version>
@@ -204,7 +204,7 @@
                             <xsdOptions>
                                 <xsdOption>
                                     <xsd>
-                                        ${basedir}/src/main/resources/xsd/${kv1IndexVersion}/kv1-index.xsd
+                                        ${basedir}/src/main/resources/xsd/${kv1IndexVersion}/kv1index-810.xsd
                                     </xsd>
                                     <extension>true</extension>
                                     <bindingFile>bindings.xjb</bindingFile>

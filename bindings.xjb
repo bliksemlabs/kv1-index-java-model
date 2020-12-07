@@ -14,7 +14,7 @@
 
 	<!-- See the script bin/version_updater.sh It updates version in schema locations-->
 
-	<jxb:bindings schemaLocation="./src/main/resources/xsd/8.3.0.0/kv1-index.xsd">
+	<jxb:bindings schemaLocation="./src/main/resources/xsd/8.1.0.1/kv1index-810.xsd">
 		<jxb:schemaBindings>
 			<jxb:package name="nl.connekt.bison.kv1index" />
 		</jxb:schemaBindings>
