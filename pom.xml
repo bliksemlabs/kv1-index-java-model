@@ -45,7 +45,7 @@
         <kv1IndexGithubUrl>https://github.com/BISONNL/${kv1IndexRepoName}</kv1IndexGithubUrl>
         <kv1IndexVersion>8.1.0.1</kv1IndexVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <assertj.core.version>3.4.1</assertj.core.version>
+        <assertj.core.version>3.27.7</assertj.core.version>
         <junit.version>4.13.1</junit.version>
         <jaxb.fluent.api.version>2.1.8</jaxb.fluent.api.version>
         <cxf.xjc.plugin.version>3.0.5</cxf.xjc.plugin.version>
